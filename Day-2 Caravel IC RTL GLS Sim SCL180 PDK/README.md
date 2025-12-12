@@ -330,6 +330,108 @@ Below are the synthesis reports generated during the 4M1L synthesis run:
 
 These reports were generated automatically during synthesis and are stored inside the `synthesis/` directory.
 
+Here is your **complete GitHub-ready README section** for **Results & Analysis**, fully written in Markdown and based on the three uploaded report files (`area_post_synth.rpt`, `power_post_synth.rpt`, `qor_post_synth.rpt`).
+I extracted the metrics directly from the logs and converted them into clean, structured tables with explanations.
+
+---
+
+# 📊 Results and Analysis
+
+This section presents the synthesized results of the `vsdcaravel` design using the post-synthesis reports generated from:
+
+* **area_post_synth.rpt**
+* **power_post_synth.rpt**
+* **qor_post_synth.rpt**
+
+---
+
+## 🧱 1. Area Report Analysis (`area_post_synth.rpt`)
+
+The area report provides details about cell usage, design area, and utilization after synthesis.
+
+### **🔹 Area Summary**
+
+| Metric                        | Value              |
+| ----------------------------- | ------------------ |
+| Number of Cells               | **31,205**         |
+| Number of Combinational Cells | **18,575**         |
+| Number of Sequential Cells    | **6,887**          |
+| Total Cell Area               | **778,824.94 µm²** |
+| Combinational Area            | **343,795.63 µm²** |
+| Non-Combinational Area        | **431,042.67 µm²** |
+| Buffer/Inverter Area          | **30,296.82 µm²**  |
+| Macro / Black Box Area        | **3,986.64 µm²**   |
+| Net Interconnect Area         | **36,088.91 µm²**  |
+| **Total Design Area**         | **814,913.85 µm²** |
+
+
+---
+
+## ⚡ 2. Power Report Analysis (`power_post_synth.rpt`)
+
+The power report provides the synthesized power breakdown into switching, internal, and leakage components.
+
+### **🔹 Power Summary**
+
+| Power Component         | Value          | Percentage |
+| ----------------------- | -------------- | ---------- |
+| Cell Internal Power     | **43.6474 mW** | 53%        |
+| Net Switching Power     | **38.0750 mW** | 47%        |
+| **Total Dynamic Power** | **81.7224 mW** | 100%       |
+| Cell Leakage Power      | **3.1650 µW**  | ~0%        |
+
+### **🔹 Combined Power Table**
+
+| Component | Internal       | Switching      | Leakage       | Total          |
+| --------- | -------------- | -------------- | ------------- | -------------- |
+| **Total** | **43.6460 mW** | **38.0419 mW** | **3.1650 µW** | **81.6910 mW** |
+
+### **📌 Interpretation**
+
+* Dynamic power (internal + switching) dominates, as expected for synthesized digital logic.
+* Leakage power is extremely low (~3 µW), demonstrating an efficient standard cell library and synthesis strategy.
+* Internal and switching components contribute almost equally, indicating balanced logic and wiring activity.
+
+---
+
+## 📐 3. QoR (Quality of Results) Analysis (`qor_post_synth.rpt`)
+
+This report summarizes the final synthesized timing and electrical rule quality.
+
+### **🔹 QoR Summary**
+
+| Metric                     | Value       |
+| -------------------------- | ----------- |
+| Worst Setup Violation      | **0.00 ns** |
+| Total Setup Violation      | **0.00 ns** |
+| Number of Setup Violations | **0**       |
+| Worst Hold Violation       | **0.00 ns** |
+| Total Hold Violation       | **0.00 ns** |
+| Number of Hold Violations  | **0**       |
+| Max Transition Violations  | **0**       |
+| Max Capacitance Violations | **0**       |
+
+### **📌 Interpretation**
+
+* The design is **clean with zero timing or electrical DRC violations**, which indicates:
+
+  * Good logic structuring
+  * Proper constraints
+  * The synthesis tool was able to meet all performance targets
+
+---
+
+# 📝 Final Summary
+
+The synthesis results of the `vsdcaravel` design indicate:
+
+* ✔️ **Zero timing violations** (both setup and hold)
+* ✔️ **Balanced dynamic power distribution**
+* ✔️ **Clean QoR with no max-cap or transition issues**
+* ✔️ **Optimized area utilization with efficient logic distribution**
+
+These three reports form the basis of the post-synthesis evaluation and help validate the correctness and efficiency of the synthesized design.
+
 ---
 
 # 8. Summary of Verification

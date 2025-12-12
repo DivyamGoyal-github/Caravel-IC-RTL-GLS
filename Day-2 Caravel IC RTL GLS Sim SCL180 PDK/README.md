@@ -104,11 +104,51 @@ Read register X = ...
 Monitor: Test HK SPI (RTL) Passed
 ```
 
+<div align="center" >
+  <img src="./logs/RTL_Passed.jpg" alt="rtl_logs" width="80%">
+</div>
+
+RTL Log file generated 
+
+```bash
+Reading hkspi.hex
+hkspi.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+VCD info: dumpfile hkspi.vcd opened for output.
+Read data = 0x11 (should be 0x11)
+Read register 0 = 0x00 (should be 0x00)
+Read register 1 = 0x04 (should be 0x04)
+Read register 2 = 0x56 (should be 0x56)
+Read register 3 = 0x11 (should be 0x11)
+Read register 4 = 0x00 (should be 0x00)
+Read register 5 = 0x00 (should be 0x00)
+Read register 6 = 0x00 (should be 0x00)
+Read register 7 = 0x00 (should be 0x00)
+Read register 8 = 0x02 (should be 0x02)
+Read register 9 = 0x01 (should be 0x01)
+Read register 10 = 0x00 (should be 0x00)
+Read register 11 = 0x00 (should be 0x00)
+Read register 12 = 0x00 (should be 0x00)
+Read register 13 = 0xff (should be 0xff)
+Read register 14 = 0xef (should be 0xef)
+Read register 15 = 0xff (should be 0xff)
+Read register 16 = 0x03 (should be 0x03)
+Read register 17 = 0x12 (should be 0x12)
+Read register 18 = 0x04 (should be 0x04)
+Monitor: Test HK SPI (RTL) Passed
+
+```
+
 To view waveforms:
 
 ```bash
 gtkwave hkspi.vcd hkspi_tb.v
 ```
+
+<div align="center" >
+  <img src="./assets/rtl_wave.jpg" alt="rtl_wave" width="80%">
+</div>
+
 
 ---
 
@@ -205,6 +245,41 @@ Read register X = ...
 Monitor: Test HK SPI (GL) Passed
 ```
 
+<div align="center" >
+  <img src="./logs/GL_Passed.jpg" alt="GL_Passed" width="80%">
+</div>
+
+GLS Log file 
+
+```bash
+Reading hkspi.hex
+hkspi.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+VCD info: dumpfile hkspi.vcd opened for output.
+Read data = 0x11 (should be 0x11)
+Read register 0 = 0x00 (should be 0x00)
+Read register 1 = 0x04 (should be 0x04)
+Read register 2 = 0x56 (should be 0x56)
+Read register 3 = 0x11 (should be 0x11)
+Read register 4 = 0x00 (should be 0x00)
+Read register 5 = 0x00 (should be 0x00)
+Read register 6 = 0x00 (should be 0x00)
+Read register 7 = 0x00 (should be 0x00)
+Read register 8 = 0x02 (should be 0x02)
+Read register 9 = 0x01 (should be 0x01)
+Read register 10 = 0x00 (should be 0x00)
+Read register 11 = 0x00 (should be 0x00)
+Read register 12 = 0x00 (should be 0x00)
+Read register 13 = 0xff (should be 0xff)
+Read register 14 = 0xef (should be 0xef)
+Read register 15 = 0xff (should be 0xff)
+Read register 16 = 0x03 (should be 0x03)
+Read register 17 = 0x12 (should be 0x12)
+Read register 18 = 0x04 (should be 0x04)
+Monitor: Test HK SPI (GL) Passed
+
+```
+
 ---
 
 # 6. RTL vs GLS Waveform Comparison
@@ -230,6 +305,17 @@ Signals must match exactly between RTL and GLS.
 Waveforms are identical → functional equivalence confirmed.
 Screenshots stored in `assets/rtl_wave.png` and `assets/gls_wave.png`.
 
+**RTL Waveform**
+
+<div align="center" >
+  <img src="./assets/rtl_wave.jpg" alt="RTL_Wave" width="80%">
+</div>
+
+**GLS Waveform**
+
+<div align="center" >
+  <img src="./assets/gls_wave.jpg" alt="GLS_Wave" width="80%">
+</div>
 ---
 
 # 7. Results & Analysis
